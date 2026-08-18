@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background-color: #FBFAF6;
+  color: #1C1C1A;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #C89A3E;
+  color: #0A1A0F;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #2D5739;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.brass-text {
+  color: #A87D2A;
+}
+
+/* Grain texture overlay */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Thin editorial divider */
+.editorial-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(26, 26, 25, 0.15), transparent);
+}
+
+.editorial-line-light {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(251, 250, 246, 0.15), transparent);
+}
+
+/* Hide horizontal scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
